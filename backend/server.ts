@@ -311,7 +311,7 @@ const frontendDistPath = path.join(__dirname, '..', 'dist');
 
 app.use(express.static(frontendDistPath));
 
-app.get('*', (_, res) => {
+app.get('/*splat', (_, res) => {
   res.sendFile(path.join(frontendDistPath, 'index.html'));
 });
 
