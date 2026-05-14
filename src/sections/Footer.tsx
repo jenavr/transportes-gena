@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Logo } from '../components/Logo';
 
 const FacebookIcon = ({ className = 'h-4 w-4' }: { className?: string }) => (

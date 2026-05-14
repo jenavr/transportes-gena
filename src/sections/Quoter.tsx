@@ -27,7 +27,7 @@ import {
   Navigation,
 } from 'lucide-react';
 import type { QuoteCalculation } from '../types/quote';
-import { Field, NumberInput, TextInput } from '../components/Field';
+import { Field, NumberInput } from '../components/Field';
 import { PlacesAutocompleteInput } from '../components/PlacesAutocompleteInput';
 import {
   DEFAULT_QUOTE,
