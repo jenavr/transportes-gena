@@ -1,10 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
@@ -302,8 +307,16 @@ app.post('/api/places/autocomplete', async (req, res) => {
   }
 });
 
+const frontendDistPath = path.join(__dirname, '..', 'dist');
+
+app.use(express.static(frontendDistPath));
+
+app.get('*', (_, res) => {
+  res.sendFile(path.join(frontendDistPath, 'index.html'));
+});
+
 const PORT = Number(process.env.PORT) || 4000;
 
 app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
+  console.log(`Backend running on port ${PORT}`);
 });
