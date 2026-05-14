@@ -46,9 +46,8 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as
   | string
   | undefined;
 
-const BACKEND_URL =
-  (import.meta.env.VITE_BACKEND_URL as string | undefined) ??
-  'http://localhost:4000';
+  const BACKEND_URL =
+  (import.meta.env.VITE_BACKEND_URL as string | undefined) ?? '';
 
 export const buildEmbedUrl = (origin: string, destination: string) => {
   const o = encodeURIComponent(origin.trim() || 'Mexico');
